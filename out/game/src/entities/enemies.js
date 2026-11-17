@@ -1,4 +1,0 @@
-import {rand,dist} from '../palette.js';
-export function spawn(s){const a=rand(s.seed)*Math.PI*2,r=310+rand(s.seed)*75;const brute=s.wave>2&&rand(s.seed)<.18;s.enemies.push({x:400+Math.cos(a)*r,y:250+Math.sin(a)*r,r:brute?17:11,hp:brute?3:1,max:brute?3:1,speed:(brute?1.05:1.35)+s.wave*.075,kind:brute?'brute':'mote',phase:rand(s.seed)*7})}
-export function updateEnemies(s){for(const e of s.enemies){const dx=s.player.x-e.x,dy=s.player.y-e.y,d=Math.hypot(dx,dy)||1;e.x+=dx/d*e.speed;e.y+=dy/d*e.speed;e.phase+=.05;if(d<e.r+s.player.r&&s.player.inv<=0){s.hp--;s.player.inv=64;s.flash=12;if(s.hp<=0)s.mode='gameover'}}}
-export function damageEnemies(s,x,y,r,power){for(const e of s.enemies){if(dist(e,{x,y})<r+e.r){e.hp-=power;if(e.hp<=0){s.score+=e.kind==='brute'?35:10;s.kills++;for(let i=0;i<4;i++)s.particles.push({x:e.x,y:e.y,vx:Math.cos(i*1.57)*2,vy:Math.sin(i*1.57)*2,life:28})}}}s.enemies=s.enemies.filter(e=>e.hp>0)}

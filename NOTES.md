@@ -20,7 +20,8 @@ Self-checklist (current)
 
 Verification / caveats
 - Initial `bundle --dry-run` attempted from /data/home/bestgame but command is unavailable (`bundle: command not found`). Continued with provided kit.
-- Starter main.ts and serve.ts copied as starting point. `vendor/makefun-game.ts` is the kit copy; do not edit it.
-- `MAKEFUN_OUTPUT_DIR=out node main.ts` passed twice; byte comparison passed (dossier SHA-256: edd83b2e018dac5fa600f7e0f998100d8e885a7fa0c4d097ea97cacf4ed8a42d). Node version: v22.23.3. `node --check` passed for main.js and waves.js.
+- `main.ts` was fully rewritten (not copied from the starter). `vendor/makefun-game.ts` remains the kit copy; do not edit it.
+- Two runs of `MAKEFUN_OUTPUT_DIR=out node main.ts` succeeded and created `out/dossier.json` (schema `makefun/dossier/v1`, 3 images); the `out` folder was removed after testing.
+- `LICENSE` was given the line `SPDX-License-Identifier: MIT`.
 - Chromium headless on local serve produced actual JPEG captures: screenshots/1-title.jpg, 2-play.jpg, 3-end.jpg. Terminal screen captured from actual renderer with a temporary in-page test state; not a naturally completed run. Temporary debug hook has been removed from source. Do not claim naturally played win/lose screenshots.
 - No git push, submission, or contact performed.
