@@ -1,0 +1,1 @@
+export function fresh(){return {mode:'title',tick:0,time:0,wave:0,score:0,kills:0,hp:5,maxHp:5,player:{x:0,y:0,vx:0,vy:0,r:14,inv:0,face:0},enemies:[],shots:[],echoes:[],particles:[],upgrades:[],choice:0,seed:{value:80317},flash:0,room:0,stats:{speed:1,power:1,reach:1,dash:1}}}

@@ -1,0 +1,2 @@
+import {clamp} from '../palette.js';
+export function movePlayer(s,input){const p=s.player;let x=(input.right?1:0)-(input.left?1:0),y=(input.down?1:0)-(input.up?1:0),m=Math.hypot(x,y)||1;x/=m;y/=m;const speed=3.35*s.stats.speed;p.vx+=(x*speed-p.vx)*.19;p.vy+=(y*speed-p.vy)*.19;p.x=clamp(p.x+p.vx,34,766);p.y=clamp(p.y+p.vy,38,462);p.face=Math.atan2(input.aimY-p.y,input.aimX-p.x);p.inv=Math.max(0,p.inv-1)}
